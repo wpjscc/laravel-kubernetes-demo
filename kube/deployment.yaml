@@ -13,9 +13,25 @@ spec:
     spec:
       containers:
         - name: demo
-          image: learnk8s/laravel-kubernetes-demo
+          image: wpjscc/laravel-kubernetes-demo
           ports:
             - containerPort: 80
           env:
             - name: APP_KEY
               value: base64:cUPmwHx4LXa4Z25HhzFiWCf7TlQmSqnt98pnuiHmzgY=
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: laravel-kubernetes-demo-ingress
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+    - host: laravel-kubernetes-demo.test
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: laravel-kubernetes-demo
+              servicePort: 80
