@@ -1,3 +1,23 @@
+
+
+```
+kubectl apply -f deployment.yaml
+```
+```
+kubectl get pods
+```
+
+```
+kubectl apply -f service.yaml
+```
+```
+kubectl get services
+```
+
+```
+minikube service --url=true laravel-kubernetes-demo
+```
+
 # Laravel Kubernetes Demo Application
 
 A simple Laravel Demo Application for a Kubernetes Tutorial.
