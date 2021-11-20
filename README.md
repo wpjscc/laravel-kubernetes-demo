@@ -8,14 +8,20 @@ kubectl get pods
 ```
 
 ```
+kubectl get ingress
+```
+
+设置服务 才能访问 要不会503
+```
 kubectl apply -f service.yaml
 ```
 ```
 kubectl get services
 ```
 
+非虚拟域名访问
 ```
-minikube service --url=true laravel-kubernetes-demo
+minikube service --url=true laravel-kubernetes-demo 
 ```
 
 # Laravel Kubernetes Demo Application
